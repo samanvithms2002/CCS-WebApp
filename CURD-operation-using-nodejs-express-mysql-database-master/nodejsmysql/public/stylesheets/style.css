@@ -1,0 +1,100 @@
+body {
+  padding: 50px;
+  font: 14px "TT Norms";
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  /* height: 100vh; */
+  /* background-image: -webkit-linear-gradient(65deg, #3282b8 60%, #f0f8fe 40%)  ; */
+ 
+}
+
+a {
+  color: #00B7FF;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+}
+label{
+  font-family:"TT Norms Medium" ;
+  color: rgb(100, 111, 124);
+  font-size: medium ;
+}
+#signupbox{
+  box-shadow: #1f5c85;
+}
+.Button{
+  border: 2px solid #3282b8;
+				background-color: #f0f8fe;
+        color: #264373;
+        
+}
+.container{
+  margin: 50px auto;
+ 
+  background-color: #eff8ff;
+  border-radius: 5px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+ ;
+}
+.Heading p{
+  text-align: center;
+  margin-top:20px;
+  font-size: 40px;
+  color: #264373;
+  font-family: "TT Norms Black";
+
+}
+.Details{
+  background-color: rgb(246, 250, 252);
+}
+input[type=text ] {
+  border: 1px solid #7b8aa1;
+  color: #264373;
+}
+input[type=number ] {
+  border: 1px solid #7b8aa1;
+  color: #264373;
+}
+input[type=email ] {
+  border: 1px solid #7b8aa1;
+  color: #264373;
+}
+
+input[type=text ]:focus {
+  border: 2px solid #3b619e;
+  border-radius: 5px;
+  color: #264373;
+}
+input[type=radio ]:focus {
+  border: 2px solid #3b619e;
+  /* border-radius: 5px; */
+}
+input[type=number ]:focus {
+  border: 2px solid #3b619e;
+  border-radius: 5px;
+  color: #264373;
+}
+input[type=email ]:focus {
+  border: 2px solid #3b619e;
+  border-radius: 5px;
+  color: #264373;
+}
+input[type=checkbox ]:focus {
+  border: 2px solid #3b619e;
+  border-radius: 5px;
+  color: #264373;
+}

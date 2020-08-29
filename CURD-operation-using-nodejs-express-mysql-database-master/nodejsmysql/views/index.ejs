@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Participants Details</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 col-sm-12">
+          <img src="/images/Layer 3 (3).svg" alt="" width="95%" height="50%">
+        </div>
+        
+        <div class="col-md-6 col-sm-12">
+          <div class="row Details">
+            <div class="Heading align-items-center justify-content-center">
+              <!-- <div class="panel-title">Participants Form</div> -->
+              <p><% if(success !=''){ %> <%= success %> <% } %></p>
+              <p>Enter your Details</p>
+            </div>
+            <div class="panel-body">
+              <div class="container-fluid">
+                
+              <form
+                action="/"
+                id="EmployeeForm"
+                class="form-horizontal"
+                method="post"
+                role="form"
+              >
+                <div
+                  id="signupalert"
+                  style="display: none"
+                  class="alert alert-danger"
+                >
+                  <p>Error:</p>
+                  <span></span>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group row">
+                      <div class="col-md-12 col-sm-12">
+                        <label for="firstname" class="" style="color: rgb(100, 111, 124);"
+                        >Name</label
+                      >
+                      </div>
+                     
+                      <div class="col-md-10 col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          placeholder="Enter Your Name"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group row">
+                      <div class="col-md-12 col-sm-12">
+                        <label for="email" class=""
+                        >Email</label
+                      >
+                      </div>
+                      
+                      <div class="col-md-10 col-sm-10">
+                        <input
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          placeholder="Email Address"
+                          required
+                        />
+                      </div>
+                  </div>
+  
+                  
+                  </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                  <label for="icode" class="col-md-2 ">
+                    Domain</label
+                  >
+
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <input type="checkbox" name="technical" value="Technical"  />
+                    <label for="lastname"  style="color: #3282b8;font-size: small;">Technical</label>
+
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <input type="checkbox" name="managment" value="Managment" />
+                        <label for="lastname" style="color: #3282b8;font-size: small;">Managment</label>
+
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <input type="checkbox" name="design" value="Design" />
+                        <label for="lastname"  style="color: #3282b8;font-size: small;">Design</label>
+
+                      </div>
+                      
+                   
+
+                   
+
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="form-group ">
+
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+
+                    <div class="col-md-12 col-sm-12">
+                      <label for="password" class="" 
+                      >Registration No</label
+                    > 
+                    </div>
+                      
+                  
+                    <div class="col-md-10 col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="regno"
+                        placeholder="Enter Registration No"
+                        required
+                      />
+                    </div>
+                  
+                    
+                  </div>
+                 
+                  </div>
+                  <div class="col-md-6 col-md-12">
+
+                    <div class="form-group">
+                      <div class="col-md-12 col-sm-12">
+                        <label for="icode" class="">
+                          Moblie</label
+                        >
+                      </div>
+                     <div class="col-md-10 col-sm-10">
+                      
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="moblie"
+                          placeholder="Enter Moblie Number"
+                          required
+                        />
+                     
+                        
+                      
+
+                     </div>
+                      
+                    </div>
+                  </div>
+                 
+                </div>
+               
+
+
+                <div class="form-group">
+                  
+                  
+                    <div class="col-md-12 col-sm-12">
+                      <label for="icode" class="">
+                        WhatsApp Number</label
+                      >
+                    </div>
+                   <div class="col-md-6 col-sm-6">
+                    
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="whatsapp"
+                        placeholder="Enter WhatsApp Number"
+                        required
+                      />
+                   
+                   
+                    
+                  </div>
+                  
+                </div>
+
+                <!-- <div class="form-group">
+                  <label for="icode" class="col-md-3 control-label">
+                    Status</label
+                  >
+                  <div class="col-md-9">
+                    <select id="cars"  name="status">
+                      <option value="Appeared">Appeared</option>
+                      <option value="Selected for round 2"
+                        >Selected for round 2</option
+                      >
+                      <option value="Selected">Selected</option>
+                    </select>
+                  </div>
+                </div> -->
+
+                <div class="form-group align-items-center justify-content-center">
+                  <label for="icode" class="col-md-3 ">
+                    Gender</label
+                  >
+                  <div class="col-md-9" style="color: black;" >
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-sm-12">
+                        <label for="male" style="color: #3282b8;font-size: small;">Male</label><br />
+                        <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        value="male"
+                        required
+                      />
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12" style="color: black;">
+                        <label for="female" style="color: #3282b8;font-size: small;">Female</label><br />
+                        <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        value="female"
+                        required
+                      />
+
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12">
+                       
+                        <label for="other" style="color: #3282b8;font-size: small;">Other</label><br />
+                        
+                        <input
+                          type="radio"
+                          id="other"
+                          name="gender"
+                          value="other"
+                          required
+                        />
+                      </div>
+                     
+                    
+                    
+
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <!-- Button -->
+                  <div class="col-md-6  ">
+                    <input
+                      type="submit"
+                      name="submit"
+                      value="Submit"
+                      class="btn btn-primary"
+                      style="width: 100%; font-size:larger ;"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

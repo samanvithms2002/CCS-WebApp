@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Participants Details</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Participants Details</h1>
+
+        <form action="/search" id="membersform" class="form-horizontal" method="POST" role="form">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="name" class="col-md-12 control-label">Status </label>
+                    <div class="col-md-12">
+                        <select name="fitrname" class="form-control">
+                          <option value="">Select Status</option>
+                          <option value="Only Applied">Only Applied</option>
+                          <option value="Appeared">Appeared</option>
+                          <option value="Selected for round 2">Selected for round 2</option>
+                          <option value="Selected">Selected</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="regno" class="col-md-12 control-label">By Registration Number</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="fitrreg" placeholder="Registration Number" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="domain" class="col-md-12 control-label">By Domain Name</label>
+                    <div class="col-md-12">
+                        <select name="filtrdomain" class="form-control">
+                            <option value="">Select Domain</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Managment">Managment</option>
+                            <option value="Design">Design</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="email" class="col-md-12 control-label">&nbsp;</label>
+                    <div class="col-md-12">
+                        <input type="submit" class="form-control btn btn-primary" name="submir" placeholder="Filter" />
+                    </div>
+                </div>
+            </div>
+
+        </form>
+       
+        <table id="membersTable" class="table table-striped table-primary">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Registration Number</th>
+              <th>Moblie Number</th>
+              <th>WhatsApp Number</th>
+              <th>Technical</th>
+              <th>Managment</th>
+              <th>Design</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if (records.length >0){ %> <% records.forEach(function(row){ %>
+            <tr>
+              <td> <%=row.name %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.email %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.regno %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.moblie %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.whatsapp %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.technical %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.managment %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.design %></a></td>
+              <td><a href="/edit/<%= row.id %>"> <%=row.status %></a></td>
+              <td>
+                <a class="btn btn-primary btn-xs" href="/edit/<%= row.id %>"
+                  ><i class="fa fa-edit"></i
+                ></a>
+                <a class="btn btn-danger btn-xs" href="/delete/<%= row.id %>"
+                  ><i class="fa fa-trash"></i
+                ></a>
+              </td>
+            </tr>
+            <% })}else{ %>
+            <tr>
+              <td colspan="6">No Record Found</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                    $('#membersTable').DataTable();
+                });
+        </script>
+  </body>
+</html>
